@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码:" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XPn-h2-V2d">
-                                <rect key="frame" x="87.5" y="437" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="457" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="7rD-IO-5RU"/>
                                     <constraint firstAttribute="height" constant="30" id="jMV-hZ-Q7h"/>
@@ -39,7 +39,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xO0-yl-eXt">
-                                <rect key="frame" x="87.5" y="487" width="200" height="30"/>
+                                <rect key="frame" x="88" y="577" width="200" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="eQp-jV-kfT"/>
@@ -52,24 +52,71 @@
                                     <action selector="loginClick:" destination="Gtp-YG-ROR" eventType="touchUpInside" id="iew-WT-N3N"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOc-sZ-6da">
+                                <rect key="frame" x="292.5" y="457" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="63X-cR-T9E"/>
+                                    <constraint firstAttribute="height" constant="30" id="8jm-Kf-j5c"/>
+                                </constraints>
+                                <state key="normal" title="?">
+                                    <color key="titleColor" red="0.81189281088082899" green="0.19750297172406117" blue="0.0098828549782302988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="passRetrievalClick:" destination="Gtp-YG-ROR" eventType="touchUpInside" id="1Uj-Ml-uCb"/>
+                                </connections>
+                            </button>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="找回密码提示问题?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SRB-x8-IMS">
+                                <rect key="frame" x="87.5" y="497" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KCT-rZ-FeB"/>
+                                    <constraint firstAttribute="width" constant="200" id="QR1-4v-v8y"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="找回密码安全答案?" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cBN-hL-OfJ">
+                                <rect key="frame" x="87.5" y="537" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bgA-dr-UQP"/>
+                                    <constraint firstAttribute="height" constant="30" id="xVS-Pf-Nws"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xO0-yl-eXt" firstAttribute="top" secondItem="XPn-h2-V2d" secondAttribute="bottom" constant="90" id="0z5-Bp-9ze"/>
+                            <constraint firstItem="SRB-x8-IMS" firstAttribute="centerX" secondItem="shh-EA-JbB" secondAttribute="centerX" id="8rE-6g-oGl"/>
                             <constraint firstItem="bEQ-EX-hW1" firstAttribute="centerX" secondItem="shh-EA-JbB" secondAttribute="centerX" id="Elh-f4-1xn"/>
                             <constraint firstAttribute="bottom" secondItem="bEQ-EX-hW1" secondAttribute="bottom" constant="250" id="EyE-6z-EpB"/>
-                            <constraint firstItem="I7Y-bw-a8I" firstAttribute="top" secondItem="xO0-yl-eXt" secondAttribute="bottom" constant="150" id="INk-r9-4FC"/>
+                            <constraint firstItem="tOc-sZ-6da" firstAttribute="centerY" secondItem="XPn-h2-V2d" secondAttribute="centerY" id="HNn-J0-Rkm"/>
+                            <constraint firstItem="I7Y-bw-a8I" firstAttribute="top" secondItem="xO0-yl-eXt" secondAttribute="bottom" constant="60" id="INk-r9-4FC"/>
                             <constraint firstItem="xO0-yl-eXt" firstAttribute="centerX" secondItem="shh-EA-JbB" secondAttribute="centerX" id="TP6-QL-NXU"/>
+                            <constraint firstItem="cBN-hL-OfJ" firstAttribute="top" secondItem="SRB-x8-IMS" secondAttribute="bottom" constant="10" id="dcR-8Z-3YD"/>
                             <constraint firstItem="XPn-h2-V2d" firstAttribute="centerX" secondItem="shh-EA-JbB" secondAttribute="centerX" id="fzH-ri-GJ6"/>
-                            <constraint firstItem="xO0-yl-eXt" firstAttribute="top" secondItem="XPn-h2-V2d" secondAttribute="bottom" constant="20" id="pwX-R7-p7m"/>
+                            <constraint firstItem="SRB-x8-IMS" firstAttribute="top" secondItem="XPn-h2-V2d" secondAttribute="bottom" constant="10" id="mdd-iL-ZQL"/>
+                            <constraint firstItem="cBN-hL-OfJ" firstAttribute="centerX" secondItem="shh-EA-JbB" secondAttribute="centerX" id="qo4-Gl-nEP"/>
+                            <constraint firstItem="tOc-sZ-6da" firstAttribute="leading" secondItem="XPn-h2-V2d" secondAttribute="trailing" constant="5" id="v5r-Ge-WFS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="o40-NR-I8W"/>
                     <connections>
+                        <outlet property="answerfield" destination="cBN-hL-OfJ" id="8yK-K6-li7"/>
+                        <outlet property="askButton" destination="tOc-sZ-6da" id="NgZ-VC-gNa"/>
                         <outlet property="bottomIconImage" destination="EyE-6z-EpB" id="Heh-lr-kNE"/>
+                        <outlet property="buttonBottomConstraint" destination="INk-r9-4FC" id="Qt4-PI-cbZ"/>
+                        <outlet property="buttonTopConstraint" destination="0z5-Bp-9ze" id="kRq-IZ-RI3"/>
                         <outlet property="centerAlignLogin" destination="TP6-QL-NXU" id="vaY-zd-AH5"/>
                         <outlet property="centerAlignPass" destination="fzH-ri-GJ6" id="dDZ-gC-Fht"/>
+                        <outlet property="centerAnswer" destination="qo4-Gl-nEP" id="7rq-oz-PNy"/>
+                        <outlet property="centerProblem" destination="8rE-6g-oGl" id="iTO-4L-2ml"/>
                         <outlet property="loginButton" destination="xO0-yl-eXt" id="CHs-jN-0VI"/>
                         <outlet property="passField" destination="XPn-h2-V2d" id="BdD-7V-0hb"/>
+                        <outlet property="problemField" destination="SRB-x8-IMS" id="z89-OR-5Xk"/>
+                        <outlet property="problemTopConstraint" destination="mdd-iL-ZQL" id="0Sd-am-Uf1"/>
                         <segue destination="Lvh-MD-PWB" kind="show" identifier="Home" id="lXH-V9-dOH"/>
                     </connections>
                 </viewController>

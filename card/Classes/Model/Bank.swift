@@ -30,6 +30,10 @@ class Bank: NSObject {
     var id : Int = 0
     // 密码
     var passWord : String?
+    // 问题
+    var problem : String?
+    // 答案
+    var answer : String?
     
     init(dict: [String: AnyObject]) {
         super.init()
@@ -46,7 +50,7 @@ class Bank: NSObject {
     }
     
     override var description: String {
-        let property = ["bankName","bankCard","totalAmount","provisionalQuota","availableCredit","addAndSubtract","money","newDate","passWord","id"]
+        let property = ["bankName","bankCard","totalAmount","provisionalQuota","availableCredit","addAndSubtract","money","newDate","passWord","id","problem","answer"]
         let dict = dictionaryWithValues(forKeys: property)
 
         return "\(dict)"

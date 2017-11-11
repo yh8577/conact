@@ -31,6 +31,10 @@ class BankData: NSObject {
     var money : Double = 0.0
     // 密码
     var passWord : String?
+    // 问题
+    var problem : String?
+    // 答案
+    var answer : String?
     
     override init() {
         super.init()
@@ -56,8 +60,10 @@ class BankData: NSObject {
         
     }
     
-    init(_ passWord: String) {
+    init(_ passWord: String, problem: String, answer: String) {
         self.passWord = passWord
+        self.problem = problem
+        self.answer = answer
     }
     
     
@@ -65,7 +71,6 @@ class BankData: NSObject {
         super.init()
         self.setValuesForKeys(dict)
     }
-    
     
     
     func updateData(type: dataType) {
@@ -79,9 +84,8 @@ class BankData: NSObject {
             
             updateSQL = "UPDATE bankData SET availableCredit = \(availableCredit) WHERE bankCard = \(bankCard);"
         } else if String(describing: type) == "Pass" {
-            
+            updateSQL = "UPDATE userPass SET passWord = '\(passWord!)', problem = '\(problem!)', answer = '\(answer!)' WHERE id = 1;"
         }
-        
         
         if SQLiteManager.shareInstance().execSQL(updateSQL!) {
             HHLog("更新数据成功")
@@ -100,7 +104,7 @@ class BankData: NSObject {
             
             insertSQL = "INSERT INTO bankList (bankName, bankCard, addAndSubtract, money) VALUES ('\(bankName!)',\(bankCard),'\(addAndSubtract!)',\(money));"
         } else if String(describing: type) == "Pass" {
-            insertSQL = "INSERT INTO userPass (passWord) VALUES ('\(passWord!)');"
+            insertSQL = "INSERT INTO userPass (passWord, problem, answer) VALUES ('\(passWord!)', '\(problem!)', '\(answer!)');"
         }
         
         // 2.执行SQL
@@ -121,7 +125,7 @@ class BankData: NSObject {
             deleteSQL = "DELETE FROM bankData WHERE bankCard = \(id);"
             deleteSQL! += "DELETE FROM bankList WHERE bankCard = \(id);"
         }
-        
+
         // 2.执行sql
         if SQLiteManager.shareInstance().execSQL(deleteSQL!) {
             HHLog("删除成功")

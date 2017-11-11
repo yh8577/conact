@@ -25,6 +25,8 @@ class BankModel: NSObject {
         newDate = bank.newDate
         id = bank.id
         passWord = bank.passWord
+        problem = bank.problem
+        answer = bank.answer
      
     }
     
@@ -50,4 +52,8 @@ class BankModel: NSObject {
     var id : Int = 0
     // 密码
     var passWord : String?
+    // 问题
+    var problem : String?
+    // 答案
+    var answer : String?
 }

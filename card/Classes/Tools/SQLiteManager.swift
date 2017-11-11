@@ -47,7 +47,7 @@ class SQLiteManager: NSObject {
         // 1.封装创建表的SQL语句
         var createTableSQL = "CREATE TABLE IF NOT EXISTS 'bankData' ( 'id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'bankName' TEXT,'bankCard' INTEGER, 'totalAmount' REAL, 'provisionalQuota' REAL, 'availableCredit' REAL);";
         createTableSQL += "CREATE TABLE IF NOT EXISTS 'bankList' ( 'id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'bankName' TEXT,'bankCard' INTEGER, 'addAndSubtract' TEXT, 'money' REAL, date timestamp not null default (datetime('now','localtime')));";
-        createTableSQL += "CREATE TABLE IF NOT EXISTS 'userPass' ( 'id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'passWord' TEXT);";
+        createTableSQL += "CREATE TABLE IF NOT EXISTS 'userPass' ( 'id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'passWord' TEXT, 'problem' TEXT, 'answer' TEXT);";
             
         // 2.执行SQL语句
         return execSQL(createTableSQL)
